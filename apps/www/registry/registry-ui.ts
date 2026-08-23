@@ -884,8 +884,6 @@ export const ui: Registry["items"] = [
     type: "registry:ui",
     title: "Icon Cloud",
     description: "An interactive 3D tag cloud component",
-    dependencies: ["lucide-react"],
-    registryDependencies: ["button"],
     files: [
       {
         path: "magicui/icon-cloud.tsx",
@@ -1318,7 +1316,7 @@ export const ui: Registry["items"] = [
     type: "registry:ui",
     title: "Floating 3D Particles",
     description:
-      "A canvas-based pseudo-3D particle field with perspective projection, rotation and mouse interaction.",
+      "A canvas-based pseudo-3D particle field with perspective projection, continuous rotation and buoyant drift.",
     files: [
       {
         path: "magicui/floating-3d-particles.tsx",

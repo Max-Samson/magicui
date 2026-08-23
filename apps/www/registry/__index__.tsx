@@ -886,7 +886,7 @@ export const Index: Record<string, any> = {
     name: "icon-cloud",
     description: "An interactive 3D tag cloud component",
     type: "registry:ui",
-    registryDependencies: ["button"],
+    registryDependencies: undefined,
     files: [{
       path: "registry/magicui/icon-cloud.tsx",
       type: "registry:ui",
@@ -1326,7 +1326,7 @@ export const Index: Record<string, any> = {
   },
   "floating-3d-particles": {
     name: "floating-3d-particles",
-    description: "A canvas-based pseudo-3D particle field with perspective projection, rotation and mouse interaction.",
+    description: "A canvas-based pseudo-3D particle field with perspective projection, continuous rotation and buoyant drift.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -4220,7 +4220,7 @@ export const Index: Record<string, any> = {
   },
   "floating-3d-particles-demo-2": {
     name: "floating-3d-particles-demo-2",
-    description: "Example showing the particle field layered behind hero content.",
+    description: "Example showing the particle field as a standalone background.",
     type: "registry:example",
     registryDependencies: ["@magicui/floating-3d-particles"],
     files: [{

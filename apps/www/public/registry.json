@@ -924,12 +924,6 @@
       "type": "registry:ui",
       "title": "Icon Cloud",
       "description": "An interactive 3D tag cloud component",
-      "dependencies": [
-        "lucide-react"
-      ],
-      "registryDependencies": [
-        "button"
-      ],
       "files": [
         {
           "path": "registry/magicui/icon-cloud.tsx",
@@ -1369,7 +1363,7 @@
       "name": "floating-3d-particles",
       "type": "registry:ui",
       "title": "Floating 3D Particles",
-      "description": "A canvas-based pseudo-3D particle field with perspective projection, rotation and mouse interaction.",
+      "description": "A canvas-based pseudo-3D particle field with perspective projection, continuous rotation and buoyant drift.",
       "files": [
         {
           "path": "registry/magicui/floating-3d-particles.tsx",
@@ -3986,7 +3980,7 @@
       "name": "floating-3d-particles-demo-2",
       "type": "registry:example",
       "title": "Floating 3D Particles Demo 2",
-      "description": "Example showing the particle field layered behind hero content.",
+      "description": "Example showing the particle field as a standalone background.",
       "registryDependencies": [
         "@magicui/floating-3d-particles"
       ],

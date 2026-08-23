@@ -2264,7 +2264,7 @@ export const examples: Registry["items"] = [
     type: "registry:example",
     title: "Floating 3D Particles Demo 2",
     description:
-      "Example showing the particle field layered behind hero content.",
+      "Example showing the particle field as a standalone background.",
     registryDependencies: ["@magicui/floating-3d-particles"],
     files: [
       {
