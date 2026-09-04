@@ -2267,6 +2267,7 @@ export const examples: Registry["items"] = [
     description:
       "Example showing the particle field as a standalone background.",
     registryDependencies: ["@magicui/floating-3d-particles"],
+    dependencies: ["next-themes"],
     files: [
       {
         path: "example/floating-3d-particles-demo-2.tsx",
