@@ -33,7 +33,8 @@ export interface Floating3DParticlesProps extends Omit<
    */
   opacity?: number
   /**
-   * Upward vertical floating speed in px per frame.
+   * Vertical floating speed in px per frame. Positive values drift upward,
+   * negative values downward.
    * @default 0.8
    */
   drift?: number
@@ -228,9 +229,13 @@ export function Floating3DParticles({
         p.angle += p.angularSpeed
         p.y -= drift
 
-        // Respawn at bottom when drifting past top edge
+        // Respawn on the opposite edge, whichever one the particle left
+        // through, so a negative drift falls instead of draining the field
         if (p.y < -height) {
           p.y = height
+          p.radius = Math.random() * Math.max(width, height) * SPREAD_FACTOR
+        } else if (p.y > height) {
+          p.y = -height
           p.radius = Math.random() * Math.max(width, height) * SPREAD_FACTOR
         }
 

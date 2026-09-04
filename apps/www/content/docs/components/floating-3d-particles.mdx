@@ -72,5 +72,5 @@ import { Floating3DParticles } from "@/components/ui/floating-3d-particles"
 | `color`     | `string` | `"#8B5CF6"` | Particle color (supports 3-digit or 6-digit hex).                                                         |
 | `size`      | `number` | `5`         | Mean particle radius in px. Each particle varies within ±40% of this value.                               |
 | `opacity`   | `number` | `0.3`       | Mean particle opacity (0–1). Each particle varies within ±0.2, clamped to [0, 1].                         |
-| `drift`     | `number` | `0.8`       | Upward vertical floating speed in px per frame.                                                           |
+| `drift`     | `number` | `0.8`       | Vertical floating speed in px per frame. Positive drifts upward, negative downward.                       |
 | `depth`     | `number` | `0.5`       | 3D depth intensity (0–1). `0` = flat 2D plane; `1` = strong perspective with pronounced near/far scaling. |
