@@ -8565,6 +8565,7 @@ export function Floating3DParticles({
     let width = 0
     let height = 0
     let particles: Particle[] = []
+    let staticDirty = true
 
     const { fov, perspectiveDistance, depthRange } = deriveProjection(depth)
 
@@ -8606,16 +8607,23 @@ export function Floating3DParticles({
     const tick = () => {
       if (!s.mounted) return
 
-      if (s.reducedMotion) {
-        staticFrame()
-        s.rafId = requestAnimationFrame(tick)
-        return
-      }
-
       if (s.paused) {
         s.rafId = requestAnimationFrame(tick)
         return
       }
+
+      // Reduced motion: paint one static frame, then idle until something
+      // invalidates it (resize, or the motion preference being turned off).
+      if (s.reducedMotion) {
+        if (staticDirty) {
+          staticDirty = false
+          staticFrame()
+        }
+        s.rafId = requestAnimationFrame(tick)
+        return
+      }
+
+      staticDirty = true
 
       ctx.clearRect(0, 0, width, height)
 
@@ -8669,6 +8677,9 @@ export function Floating3DParticles({
       particles = Array.from({ length: Math.max(0, count) }, () =>
         spawnParticle(width, height, size, opacity)
       )
+
+      // Canvas was cleared by the width/height reassignment above.
+      staticDirty = true
     }
 
     const onVisibilityChange = () => {
