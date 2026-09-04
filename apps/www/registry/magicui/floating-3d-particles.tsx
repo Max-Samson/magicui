@@ -343,5 +343,3 @@ export function Floating3DParticles({
     />
   )
 }
-
-export default Floating3DParticles
