@@ -2252,6 +2252,7 @@ export const examples: Registry["items"] = [
     description:
       "Example showing a floating 3D particle field behind hero content.",
     registryDependencies: ["@magicui/floating-3d-particles"],
+    dependencies: ["lucide-react", "next-themes"],
     files: [
       {
         path: "example/floating-3d-particles-demo.tsx",
